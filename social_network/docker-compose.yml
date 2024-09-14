@@ -1,0 +1,31 @@
+services:
+  backend:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    container_name: social_network_backend
+    ports:
+      - "8000:8000"
+    # depends_on:
+    #   - db
+    networks:
+      - default
+
+  # db:
+  #   image: mysql:8.0
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: Password123
+  #     MYSQL_DATABASE: SocialNetwork
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+  #   ports:
+  #     - "3307:3306"
+  #   networks:
+  #     - default
+
+volumes:
+  db_data:
+
+networks:
+  default:

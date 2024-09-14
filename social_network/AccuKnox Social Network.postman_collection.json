@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "f3024499-e856-4c07-ab60-1fb1e3603aac",
+		"name": "AccuKnox Social Network",
+		"description": "Postman Collection for the social network project created for AccuKnox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23925862"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"kiran2@gmail.com\",\r\n    \"password\":\"Password@1\",\r\n    \"confirm_password\":\"Password@1\",\r\n    \"name\":\"Kiran Kumar 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/accounts/signup/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"ramesh@gmail.com\",\r\n    \"password\":\"Password@1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/accounts/login/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJuYW1lIjoiS2lyYW4gS3VtYXIgMiIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJleHAiOjE3MjYzMTIxNTgsImp0aSI6IjJhZWUyYTA1NDZiOTRhM2NiNmIyZTQzNjRmOTBkOTAzIn0.0WRLTEBgcf7tfHx9F8ZLtbDjcfiq3dm4NYVLL3_Zq0M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/accounts/users/?search=",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Pending Requests",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJuYW1lIjoiS2lyYW4gS3VtYXIgMiIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJleHAiOjE3MjYzMTMwNDksImp0aSI6IjBhMDc2MTVmZWZiMzQ3NWJhYjI4NzZjYWQxMzhkYzJlIn0._fUvR4XG9XWDGQH_iwskopY-CMFqO_a2G8PtnltU0tE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/fiends/pending_requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fiends",
+						"pending_requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Friend Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJuYW1lIjoicmFtZXNoIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImV4cCI6MTcyNjMxNTg2MywianRpIjoiN2EzY2YzZGNhNTQ1NDVlMDg4YjEzMGRjYzg5OWI2MDUifQ.UvXuj8mrAFngBJ5yVzwmAn81ZS0eT3mwWU1GqFc-5Y8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sent_to\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/fiends/send_request/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fiends",
+						"send_request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Friend Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJuYW1lIjoiS2lyYW4gS3VtYXIgMiIsInRva2VuX3R5cGUiOiJhY2Nlc3MiLCJleHAiOjE3MjYzMTU2NTMsImp0aSI6IjNmYTVlYmQxYTBmMzRhMWI4YTZhZmNkMjJjYThjZTlkIn0.WJFO6w_INSGaxh--7b8BQ4MX0SxkwAkAybS6Tf9PIOc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/fiends/reject_request/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fiends",
+						"reject_request",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Friend Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJuYW1lIjoicmFtZXNoIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImV4cCI6MTcyNjMxNTg2MywianRpIjoiN2EzY2YzZGNhNTQ1NDVlMDg4YjEzMGRjYzg5OWI2MDUifQ.UvXuj8mrAFngBJ5yVzwmAn81ZS0eT3mwWU1GqFc-5Y8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/fiends/accept_request/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fiends",
+						"accept_request",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Friends",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJuYW1lIjoicmFtZXNoIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImV4cCI6MTcyNjMyNTA1OSwianRpIjoiYWJlZjY5YTc3NWU2NGM5MGJjNTZlMTkwY2ViNGQ3OGQifQ.XrgxW3Is8c6xabfXe2ZQZyIMM4JpNc3oVppSrxTztLE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/fiends/view_friends/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fiends",
+						"view_friends",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
